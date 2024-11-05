@@ -1,0 +1,168 @@
+#:import MDLabel kivymd.uix.label.MDLabel
+
+BoxLayout:
+    orientation: 'vertical'
+    canvas.before:
+        Color:
+            rgba: 0.4, 0.4, 0.4, 1  # Fond de l'application
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    MDLabel:
+        text: "Téléchargeur de Vidéos"
+        halign: "center"
+        font_style: "H4"
+        size_hint_y: None
+        height: self.texture_size[1]
+        theme_text_color: "Custom"
+        text_color: 1, 1, 1, 1  # Texte en blanc
+
+    TabbedPanel:
+        id: tab_panel
+        do_default_tab: False
+        background_color: 0.3, 0.3, 0.3, 1  # Couleur d'arrière-plan des onglets
+
+        TabbedPanelItem:
+            text: 'YouTube'
+            background_color: (0.2, 0.5, 0.8, 1) if self.state == 'down' else (0.3, 0.3, 0.3, 1)
+            BoxLayout:
+                orientation: 'vertical'
+                padding: 10
+                spacing: 10
+
+                MDTextField:
+                    id: youtube_url
+                    hint_text: "Entrez l'URL YouTube"
+                    text_color_normal: 1, 1, 1, 1
+                    hint_text_color_normal: 1, 1, 1, 0.6
+                    line_color_focus: 0.2, 0.5, 0.8, 1
+                    background_color: 0.4, 0.4, 0.4, 1  # Fond du TextField
+
+                MDRaisedButton:
+                    text: "Coller"
+                    on_release: app.paste_from_clipboard(youtube_url)
+                    text_color: 1, 1, 1, 1
+                    md_bg_color: 0.2, 0.5, 0.8, 1  # Couleur du bouton
+                MDRaisedButton:
+                    text: "Télécharger"
+                    on_release: app.download_from_platform("YouTube", youtube_url.text)
+                    text_color: 1, 1, 1, 1
+                    md_bg_color: 0.2, 0.5, 0.8, 1
+
+        TabbedPanelItem:
+            text: 'Twitter'
+            background_color: (0.2, 0.5, 0.8, 1) if self.state == 'down' else (0.3, 0.3, 0.3, 1)
+            BoxLayout:
+                orientation: 'vertical'
+                padding: 10
+                spacing: 10
+
+                MDTextField:
+                    id: twitter_url
+                    hint_text: "Entrez l'URL Twitter"
+                    text_color_normal: 1, 1, 1, 1
+                    hint_text_color_normal: 1, 1, 1, 0.6
+                    line_color_focus: 0.2, 0.5, 0.8, 1
+                    background_color: 0.4, 0.4, 0.4, 1
+
+                MDRaisedButton:
+                    text: "Coller"
+                    on_release: app.paste_from_clipboard(twitter_url)
+                    text_color: 1, 1, 1, 1
+                    md_bg_color: 0.2, 0.5, 0.8, 1
+                MDRaisedButton:
+                    text: "Télécharger"
+                    on_release: app.download_from_platform("Twitter", twitter_url.text)
+                    text_color: 1, 1, 1, 1
+                    md_bg_color: 0.2, 0.5, 0.8, 1
+
+        TabbedPanelItem:
+            text: 'Twitch'
+            background_color: (0.2, 0.5, 0.8, 1) if self.state == 'down' else (0.3, 0.3, 0.3, 1)
+            BoxLayout:
+                orientation: 'vertical'
+                padding: 10
+                spacing: 10
+
+                MDTextField:
+                    id: twitch_url
+                    hint_text: "Entrez l'URL Twitch"
+                    text_color_normal: 1, 1, 1, 1
+                    hint_text_color_normal: 1, 1, 1, 0.6
+                    line_color_focus: 0.2, 0.5, 0.8, 1
+                    background_color: 0.4, 0.4, 0.4, 1
+
+                MDRaisedButton:
+                    text: "Coller"
+                    on_release: app.paste_from_clipboard(twitch_url)
+                    text_color: 1, 1, 1, 1
+                    md_bg_color: 0.2, 0.5, 0.8, 1
+                MDRaisedButton:
+                    text: "Télécharger"
+                    on_release: app.download_from_platform("Twitch", twitch_url.text)
+                    text_color: 1, 1, 1, 1
+                    md_bg_color: 0.2, 0.5, 0.8, 1
+
+        TabbedPanelItem:
+            text: 'Pinterest'
+            background_color: (0.2, 0.5, 0.8, 1) if self.state == 'down' else (0.3, 0.3, 0.3, 1)
+            BoxLayout:
+                orientation: 'vertical'
+                padding: 10
+                spacing: 10
+
+                MDTextField:
+                    id: pinterest_url
+                    hint_text: "Entrez l'URL Pinterest"
+                    text_color_normal: 1, 1, 1, 1
+                    hint_text_color_normal: 1, 1, 1, 0.6
+                    line_color_focus: 0.2, 0.5, 0.8, 1
+                    background_color: 0.4, 0.4, 0.4, 1
+
+                MDRaisedButton:
+                    text: "Coller"
+                    on_release: app.paste_from_clipboard(pinterest_url)
+                    text_color: 1, 1, 1, 1
+                    md_bg_color: 0.2, 0.5, 0.8, 1
+                MDRaisedButton:
+                    text: "Télécharger"
+                    on_release: app.download_from_platform("Pinterest", pinterest_url.text)
+                    text_color: 1, 1, 1, 1
+                    md_bg_color: 0.2, 0.5, 0.8, 1
+
+        TabbedPanelItem:
+            text: 'TikTok'
+            background_color: (0.2, 0.5, 0.8, 1) if self.state == 'down' else (0.3, 0.3, 0.3, 1)
+            BoxLayout:
+                orientation: 'vertical'
+                padding: 10
+                spacing: 10
+
+                MDTextField:
+                    id: tiktok_url
+                    hint_text: "Entrez l'URL TikTok"
+                    text_color_normal: 1, 1, 1, 1
+                    hint_text_color_normal: 1, 1, 1, 0.6
+                    line_color_focus: 0.2, 0.5, 0.8, 1
+                    background_color: 0.4, 0.4, 0.4, 1
+
+                MDRaisedButton:
+                    text: "Coller"
+                    on_release: app.paste_from_clipboard(tiktok_url)
+                    text_color: 1, 1, 1, 1
+                    md_bg_color: 0.2, 0.5, 0.8, 1
+                MDRaisedButton:
+                    text: "Télécharger"
+                    on_release: app.download_from_platform("TikTok", tiktok_url.text)
+                    text_color: 1, 1, 1, 1
+                    md_bg_color: 0.2, 0.5, 0.8, 1
+
+    MDLabel:
+        id: download_status
+        text: "Statut du téléchargement apparaîtra ici"
+        halign: "center"
+        size_hint_y: None
+        height: self.texture_size[1]
+        theme_text_color: "Custom"
+        text_color: 1, 1, 1, 1  # Texte en blanc
