@@ -14,13 +14,13 @@ VideoDownloader est une application qui permet de télécharger des vidéos depu
 
 1. **Cloner le projet** :
    ```bash
-   git clone https://github.com/votre-utilisateur/votre-repository.git
-   cd votre-repository
+   git clone https://github.com/ABBESAmine/videodownloader.git
+   cd videodownloader
    ```
 
 2. **Créer et activer un environnement virtuel** (optionnel mais recommandé) :
    ```bash
-   python3.9 -m venv venv
+   python -m venv venv
    source venv/bin/activate  # Sous Windows : venv\Scripts\activate
    ```
 
@@ -33,15 +33,11 @@ VideoDownloader est une application qui permet de télécharger des vidéos depu
 
 1. **Lancer l'application** :
    ```bash
-   python main.py
+   python ./main.py
    ```
 
 2. **Télécharger une vidéo** : Copiez-collez l'URL de la vidéo depuis Twitter, YouTube, Pinterest ou TikTok dans l'application, puis appuyez sur le bouton de téléchargement.
 
-## Support
-
-Si vous avez des questions ou des problèmes, ouvrez un [issue](https://github.com/votre-utilisateur/votre-repository/issues).
-
 ## Auteur
 
-- [Votre Nom](https://github.com/votre-utilisateur)
+- [Amine](https://github.com/ABBESAmine)
